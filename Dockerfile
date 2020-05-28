@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y git python3-dev gcc \
 COPY requirements.txt .
 
 RUN pip install --upgrade -r requirements.txt
-RUN pip install opencv-python-headless
+RUN pip uninstall opencv-python-headless
+RUN pip install opencv-python
 
 COPY app app/
 
