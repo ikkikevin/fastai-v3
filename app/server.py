@@ -60,7 +60,7 @@ async def homepage(request):
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
     img_data = await request.form()
-    image_insert = cv2.imread(img)
+    image_insert = cv2.imread(img_data)
     gray_image = cv2.cvtColor(image_insert, cv2.COLOR_BGR2GRAY)
     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
                                cv2.THRESH_BINARY, 11, 4)
