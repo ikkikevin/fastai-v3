@@ -58,14 +58,13 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
-async def analyze(request):
+image_insert = cv2.imread(request)
+gray_image = cv2.cvtColor(image_insert, cv2.COLOR_BGR2GRAY)
+th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+                           cv2.THRESH_BINARY, 11, 4)
+cv2.imwrite(image_output,th3)
+async def analyze(image_output):
     img_data = await request.form()
-    image_insert = cv2.imread(img_data)
-    gray_image = cv2.cvtColor(image_insert, cv2.COLOR_BGR2GRAY)
-    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                               cv2.THRESH_BINARY, 11, 4)
-    cv2.imwrite(image_output,th3)
-    
     img_bytes = await (image_output['file'].read())
     img = open_image(BytesIO(img_bytes))  
     prediction = learn.predict(img)[0]
