@@ -7,7 +7,7 @@ COPY requirements.txt .
 
 RUN pip install --upgrade -r requirements.txt
 RUN pip install opencv-python
-RUN sudo apt-get install libglib2.0-0
+RUN aptitude install libglib2.0-0
 
 
 COPY app app/
