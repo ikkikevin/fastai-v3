@@ -8,9 +8,8 @@ COPY requirements.txt .
 RUN pip install --upgrade -r requirements.txt
 
 
-RUN -it jjanzic/docker-python3-opencv python
-RUN pip install opencv-python
 
+RUN pip install opencv-python numpy scipy
 
 
 COPY app app/
