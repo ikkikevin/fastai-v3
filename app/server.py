@@ -61,9 +61,8 @@ async def homepage(request):
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(img_bytes))
-    img = image_output  
-    prediction = learn.predict(image_output)[0]
+    img = open_image(BytesIO(img_bytes))  
+    prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
 
