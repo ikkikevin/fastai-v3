@@ -60,7 +60,7 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
-async def analyze(image_output):
+async def analyze(request):
     img_data = await request.form()
     img_bytes = await (image_output['file'].read())
     img = open_image(BytesIO(img_bytes))  
