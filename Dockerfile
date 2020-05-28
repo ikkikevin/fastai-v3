@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \ 
     libpng-dev \ 
     libtiff-dev \ 
-    libjasper-dev \ 
     libgtk2.0-dev \ 
     python-numpy \ 
     python-pycurl \ 
