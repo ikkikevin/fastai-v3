@@ -7,6 +7,9 @@ COPY requirements.txt .
 
 RUN pip install --upgrade -r requirements.txt
 RUN pip install opencv-python
+RUN apt-get install libglib2.0-0
+RUN apt-get install libgtk2.0-dev
+
 
 COPY app app/
 
