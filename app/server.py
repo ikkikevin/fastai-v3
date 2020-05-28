@@ -10,6 +10,7 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 from cv2 import *
 
+cv2.__version__
 
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
 export_file_name = 'export.pkl'
@@ -58,11 +59,6 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
-cv2.imread(request)
-gray_image = cv2.cvtColor(image_insert, cv2.COLOR_BGR2GRAY)
-th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                           cv2.THRESH_BINARY, 11, 4)
-cv2.imwrite(image_output,th3)
 async def analyze(image_output):
     img_data = await request.form()
     img_bytes = await (image_output['file'].read())
