@@ -1,50 +1,64 @@
-.hidden {
-  display: none;
+body {
+    background-color: #fff;
 }
 
-button {
-  margin: 0 10px 20px 0;
-  width: 99px;
+.no-display {
+    display: none;
 }
 
-button:last-of-type {
-  margin: 0;
+.center {
+    margin: auto;
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 14px;
 }
 
-canvas {
-  display: block;
-  margin: 0 0 20px 0;
+.title {
+    font-size: 30px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #262626;
 }
 
-img {
-  display: block;
-  margin: 0 0 20px 0;
+.content {
+    margin-top: 10em;
 }
 
-input#zoom {
-  margin: 0 0 20px 0;
-  width: 100%;
+.analyze {
+    margin-top: 5em;
 }
 
-.borderBelow {
-  margin: 0 0 20px 0;
-  padding: 0 0 20px 0;
+.upload-label {
+    padding: 10px;
+    font-size: 12px;
 }
 
-video {
-  margin: 0 12px 20px 0;
-  vertical-align: top;
+.result-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 13px;
 }
 
-@media (max-width: 500px) {
-  button {
-    font-size: 0.8em;
-    width: calc(33% - 5px);
-  }
+button.choose-file-button {
+    width: 200px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #7052CB;
+    font-size: 13px;
+    color: #7052CB;
 }
 
-@media (max-width: 720px) {
-  video {
-    margin: 0 10px 10px 0;
-  }
+button.analyze-button {
+    width: 200px;
+    height: 40px;
+    border: solid 1px #7052CB;
+    border-radius: 2px;
+    background-color: #7052CB;
+    font-size: 13px;
+    color: #ffffff;
+}
+
+button:focus {
+    outline: 0;
 }
