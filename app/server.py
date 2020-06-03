@@ -8,6 +8,7 @@ from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
+import cv2
 
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
 export_file_name = 'export.pkl'
@@ -60,7 +61,11 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    prediction = learn.predict(img)[0]
+    image = cv2.imread(img)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+                               cv2.THRESH_BINARY, 11, 4)
+    prediction = learn.predict(th3)[0]
     return JSONResponse({'result': str(prediction)})
 
 
