@@ -56,8 +56,8 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 def analyze(request): 
-    img_data = await request.form()
-    img_bytes = await (img_data['file'].read())
+    img_data = request.form()
+    img_bytes = (img_data['file'].read())
     image = cv2.imread(img_bytes)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
