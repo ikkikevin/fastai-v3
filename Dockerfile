@@ -35,6 +35,9 @@ RUN apt-get update && apt-get install -y \
 
 
 
+RUN pip install opencv-python 
+
+
 COPY app app/
 
 RUN python app/server.py
