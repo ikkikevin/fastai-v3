@@ -87,6 +87,7 @@ async def analyze():
     #prediction = learn.predict(img_bytes)[0]
     #return JSONResponse({'result': str(prediction)})
 
+    
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
