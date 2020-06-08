@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y \
     libav-tools  \ 
     libjpeg-dev \ 
     libpng-dev \ 
-    libtiff-dev \ 
     libgtk2.0-dev \
     python-pycurl \ 
     libatlas-base-dev \
