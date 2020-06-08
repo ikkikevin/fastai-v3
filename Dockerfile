@@ -8,10 +8,7 @@ COPY requirements.txt .
 RUN pip install --upgrade -r requirements.txt
 
 
-
-
-
-RUN pip install opencv-python 
+RUN pip install python-opencv 
 
 
 COPY app app/
