@@ -59,12 +59,13 @@ async def homepage(request):
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    image = cv2.imread(img_bytes)
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                               cv2.THRESH_BINARY, 11, 4)
-    img = open_image(BytesIO(th3))
-    prediction = learn.predict(img)[0]
+    print(image_bytes)
+    #image = cv2.imread(img_bytes)
+    #gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    #th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+                               #cv2.THRESH_BINARY, 11, 4)
+    #img = open_image(BytesIO(th3))
+    prediction = learn.predict(img_bytes)[0]
     return JSONResponse({'result': str(prediction)})
 
 
