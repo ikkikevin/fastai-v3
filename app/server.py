@@ -54,15 +54,25 @@ async def homepage(request):
     html_file = path / 'view' / 'index.html'
     return HTMLResponse(html_file.open().read())
 
+
 @app.route('/analyze', methods=['POST'])
-def analyze(request): 
-    img_data = request.form()
-    img_bytes = (img_data['file'].read())
-    image = cv2.imread(img_bytes)
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                               cv2.THRESH_BINARY, 11, 4)
-    return JSONResponse({'result': th3})
+def load_img(request):
+    print(request)
+    im = cv2.imread(request, cv2.IMREAD_GRAYSCALE)
+    _, inv = cv2.threshold(im, 150, 255, cv2.THRESH_BINARY_INV)
+    cv2.GaussianBlur(inv, (3, 3), 0)
+    cv2.imshow('Async test', inv)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    return
+
+
+async def analyze():
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    img = open_image(BytesIO(load_img))
+    prediction = learn.predict(img)[0]
+    return JSONResponse({'result': str(prediction)})
 
 
 #async def analyze(request):
