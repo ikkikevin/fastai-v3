@@ -29,7 +29,6 @@ RUN apt-get update && apt-get install -y \
     gfortran \
     webp \ 
     python-opencv \ 
-    qt5-default \
     zlib1g-dev 
 
 
