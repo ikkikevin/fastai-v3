@@ -28,7 +28,7 @@ RUN apt-get update && apt-get install -y \
     libatlas-base-dev \
     gfortran \
     webp \ 
-    python-opencv \  
+    python-opencv
 
 
 
