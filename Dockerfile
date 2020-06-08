@@ -30,7 +30,6 @@ RUN apt-get update && apt-get install -y \
     webp \ 
     python-opencv \ 
     qt5-default \
-    libvtk6-dev \ 
     zlib1g-dev 
 
 
