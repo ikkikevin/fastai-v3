@@ -54,19 +54,28 @@ async def homepage(request):
     html_file = path / 'view' / 'index.html'
     return HTMLResponse(html_file.open().read())
 
-
 @app.route('/analyze', methods=['POST'])
-async def analyze(request):
+def analyze(request): 
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    print(image_bytes)
+    image = cv2.imread(img_bytes)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+                               cv2.THRESH_BINARY, 11, 4)
+    return JSONResponse({'result': th3})
+
+
+#async def analyze(request):
+    #img_data = await request.form()
+    #img_bytes = await (img_data['file'].read())
+    #print(image_bytes)
     #image = cv2.imread(img_bytes)
     #gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     #th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
                                #cv2.THRESH_BINARY, 11, 4)
     #img = open_image(BytesIO(th3))
-    prediction = learn.predict(img_bytes)[0]
-    return JSONResponse({'result': str(prediction)})
+    #prediction = learn.predict(img_bytes)[0]
+    #return JSONResponse({'result': str(prediction)})
 
 
 if __name__ == '__main__':
