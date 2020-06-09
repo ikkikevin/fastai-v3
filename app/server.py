@@ -57,36 +57,33 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
-def load_img(request):
-    print(request)
-    im = cv2.imread(request, cv2.IMREAD_GRAYSCALE)
-    _, inv = cv2.threshold(im, 150, 255, cv2.THRESH_BINARY_INV)
-    cv2.GaussianBlur(inv, (3, 3), 0)
-    cv2.imshow('Async test', inv)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-    return
+# async def analyze():
+#     img_data = await request.form()
+#     img_bytes = await (img_data['file'].read())
+#     img = open_image(BytesIO(load_img))
+#     prediction = learn.predict(img)[0]
+#     return JSONResponse({'result': str(prediction)})
 
+# def load_img(request):
+#     print(request)
+#     im = cv2.imread(request, cv2.IMREAD_GRAYSCALE)
+#     _, inv = cv2.threshold(im, 150, 255, cv2.THRESH_BINARY_INV)
+#     cv2.GaussianBlur(inv, (3, 3), 0)
+#     cv2.imshow('Async test', inv)
+#     cv2.waitKey(0)
+#     cv2.destroyAllWindows()
+#     return
 
-async def analyze():
+async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(load_img))
-    prediction = learn.predict(img)[0]
+    img = open_image(BytesIO(img_bytes))
+    image = cv2.imread(img)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+                               cv2.THRESH_BINARY, 11, 4)
+    prediction = learn.predict(th3)[0]
     return JSONResponse({'result': str(prediction)})
-
-
-#async def analyze(request):
-    #img_data = await request.form()
-    #img_bytes = await (img_data['file'].read())
-    #print(image_bytes)
-    #image = cv2.imread(img_bytes)
-    #gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    #th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                               #cv2.THRESH_BINARY, 11, 4)
-    #img = open_image(BytesIO(th3))
-    #prediction = learn.predict(img_bytes)[0]
-    #return JSONResponse({'result': str(prediction)})
 
     
 
