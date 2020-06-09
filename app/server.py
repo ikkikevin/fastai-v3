@@ -65,10 +65,13 @@ async def analyze(request):
     image = cv2.imdecode(np.fromstring(img_bytes, np.uint8), 1)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
-    t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
-    im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
-    prediction = learn.predict(im)[0]
+    img_str = cv2.imencode('.jpg', next_image)[1].tostring()
+    prediction = learn.predict(img_str)[0]
     return JSONResponse({'result': str(prediction)})
+
+
+#nog proberen dit eraan toe te voegen
+#     img = open_image(BytesIO(img_str))
 
 
 
@@ -77,6 +80,17 @@ async def analyze(request):
  #  pil_im = PImage.fromarray(frame) 
 #x = pil2tensor(pil_im ,np.float32)
 #preds_num = learn.predict(Image(x))[2].numpy()
+
+
+
+
+
+
+
+# t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
+#     im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
+    
+
 
 
 
