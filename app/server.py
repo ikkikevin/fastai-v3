@@ -67,7 +67,7 @@ async def analyze(request):
     next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
     t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
     im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
-    prediction = learn.predict(im)
+    prediction = learn.predict(im)[0]
     return JSONResponse({'result': str(prediction)})
 
 
