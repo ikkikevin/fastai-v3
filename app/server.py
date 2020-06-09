@@ -3,8 +3,7 @@ import asyncio
 import uvicorn
 from fastai import *
 from fastai.vision import *
-from io import BytesIO
-from PIL import Image
+import io
 from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
@@ -75,16 +74,16 @@ async def homepage(request):
 #     cv2.destroyAllWindows()
 #     return
 
-async def analyze(request):
+# image = cv2.imread(barry)
+#     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+#     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
+#                                cv2.THRESH_BINARY, 11, 4)
+async def analyze(request)
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
-    img = open_image(BytesIO(img_bytes))
-    IMG = Image.open(img)
-    image = cv2.imread(IMG)
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-                               cv2.THRESH_BINARY, 11, 4)
-    prediction = learn.predict(th3)[0]
+    barry = 'https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg'
+    img = open_image(BytesIO(barry))
+    prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
     
