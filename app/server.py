@@ -57,6 +57,11 @@ async def homepage(request):
     return HTMLResponse(html_file.open().read())
 
 
+@app.route('/bye')
+def bye():
+    headline = "Goodbye!"
+
+
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
@@ -70,70 +75,7 @@ async def analyze(request):
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
-
-#nog proberen dit eraan toe te voegen
-#     img = open_image(BytesIO(img_str))
-
-
-
-
- # nog proberen   
- #  pil_im = PImage.fromarray(frame) 
-#x = pil2tensor(pil_im ,np.float32)
-#preds_num = learn.predict(Image(x))[2].numpy()
-
-
-
-
-
-
-
-# t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
-#     im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
-    
-
-
-
-
-#t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
-#im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
-    #learn.predict(im)
-
-    
-    #     img = np.asarray(PIL.Image.open(io.BytesIO(next_image)))
-
-    
-    
-#    image = np.asarray(bytearray(resp.read()), dtype="uint8")
-# image = cv2.imdecode(image,cv2.IMREAD_GRAYSCALE)
-#img = open_image(BytesIO(next_image))
-        
-
-#
-# async def analyze():
-#     img_data = await request.form()
-#     img_bytes = await (img_data['file'].read())
-#     img = open_image(BytesIO(load_img))
-#     prediction = learn.predict(img)[0]
-#     return JSONResponse({'result': str(prediction)})
-
-# def load_img(request):
-#     print(request)
-#     im = cv2.imread(request, cv2.IMREAD_GRAYSCALE)
-#     _, inv = cv2.threshold(im, 150, 255, cv2.THRESH_BINARY_INV)
-#     cv2.GaussianBlur(inv, (3, 3), 0)
-#     cv2.imshow('Async test', inv)
-#     cv2.waitKey(0)
-#     cv2.destroyAllWindows()
-#     return
-
-# image = cv2.imread(barry)
-#     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-#     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
-#                                cv2.THRESH_BINARY, 11, 4)
-
-
-    
+   
 
 if __name__ == '__main__':
     if 'serve' in sys.argv:
