@@ -74,6 +74,7 @@ async def homepage(request):
 #     cv2.waitKey(0)
 #     cv2.destroyAllWindows()
 #     return
+
 async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
