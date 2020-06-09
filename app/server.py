@@ -65,20 +65,29 @@ async def analyze(request):
     image = cv2.imdecode(np.fromstring(img_bytes, np.uint8), 1)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
-    prediction = learn.predict(next_image)[0]
+    t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
+    im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
+    prediction = learn.predict(im)
     return JSONResponse({'result': str(prediction)})
 
 
 
 
-    #     img = np.asarray(PIL.Image.open(io.BytesIO(next_image)))
-
-   
+ # nog proberen   
+ #  pil_im = PImage.fromarray(frame) 
+#x = pil2tensor(pil_im ,np.float32)
+#preds_num = learn.predict(Image(x))[2].numpy()
 
 
 
 #t = pil2tensor(next_image, dtype=np.uint8) # converts to numpy tensor
-    #im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
+#im = Image(t) # Convert to fastAi Image - this class has "apply_tfms" 
+    #learn.predict(im)
+
+    
+    #     img = np.asarray(PIL.Image.open(io.BytesIO(next_image)))
+
+    
     
 #    image = np.asarray(bytearray(resp.read()), dtype="uint8")
 # image = cv2.imdecode(image,cv2.IMREAD_GRAYSCALE)
