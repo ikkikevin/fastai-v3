@@ -57,6 +57,13 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
+async def analyze(request)
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    barry = 'https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg'
+    img = open_image(BytesIO(barry))
+    prediction = learn.predict(img)[0]
+    return JSONResponse({'result': str(prediction)})
 # async def analyze():
 #     img_data = await request.form()
 #     img_bytes = await (img_data['file'].read())
@@ -78,13 +85,7 @@ async def homepage(request):
 #     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 #     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
 #                                cv2.THRESH_BINARY, 11, 4)
-async def analyze(request)
-    img_data = await request.form()
-    img_bytes = await (img_data['file'].read())
-    barry = 'https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg'
-    img = open_image(BytesIO(barry))
-    prediction = learn.predict(img)[0]
-    return JSONResponse({'result': str(prediction)})
+
 
     
 
