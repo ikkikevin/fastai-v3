@@ -54,12 +54,10 @@ loop.close()
 @app.route('/')
 async def homepage(request):
     html_file = path / 'view' / 'index.html'
+    headline = "Goodbye!"
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/bye')
-def bye():
-    headline = "Goodbye!"
 
 
 
