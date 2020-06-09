@@ -66,7 +66,8 @@ async def analyze(request):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
     img_str = cv2.imencode('.jpg', next_image)[1].tostring()
-    prediction = learn.predict(img_str)[0]
+    img = open_image(BytesIO(img_str))
+    prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
 
