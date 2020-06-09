@@ -9,7 +9,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 import cv2
-import numpy
+import numpy as np
 
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
 export_file_name = 'export.pkl'
@@ -55,14 +55,24 @@ async def homepage(request):
     return HTMLResponse(html_file.open().read())
 
 
+
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    img_data = await request.form()
-    barry = 'https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg'
-    img_bytes = await (barry.read())
-    img = open_image(BytesIO(barry))
+    data = await request.form()
+    img_bytes = await (data['file'].read())
+    image = cv2.imdecode(np.fromstring(img_bytes, np.uint8), 1)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
+    img = open_image(BytesIO(next_image))
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
+
+#    image = np.asarray(bytearray(resp.read()), dtype="uint8")
+# image = cv2.imdecode(image,cv2.IMREAD_GRAYSCALE)
+    
+    
+
+#
 # async def analyze():
 #     img_data = await request.form()
 #     img_bytes = await (img_data['file'].read())
