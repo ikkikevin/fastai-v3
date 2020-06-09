@@ -57,7 +57,7 @@ async def homepage(request):
 
 
 @app.route('/analyze', methods=['POST'])
-async def analyze(request)
+async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     barry = 'https://www.healthxchange.sg/sites/hexassets/Assets/food-nutrition/good-reasons-to-eat-a-banana-today.jpg'
