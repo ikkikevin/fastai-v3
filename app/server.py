@@ -77,8 +77,8 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    image = cv2.imread(img)
-    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    #image = cv2.imread(img)
+    gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
                                cv2.THRESH_BINARY, 11, 4)
     prediction = learn.predict(th3)[0]
