@@ -4,6 +4,7 @@ import uvicorn
 from fastai import *
 from fastai.vision import *
 from io import BytesIO
+from PIL import Image
 from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
@@ -77,8 +78,10 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    #image = cv2.imread(img)
-    gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    img.seek(0)
+    IMG = Image.open(img)
+    image = cv2.imread(IMG)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     th3 = cv2.adaptiveThreshold(gray_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, \
                                cv2.THRESH_BINARY, 11, 4)
     prediction = learn.predict(th3)[0]
