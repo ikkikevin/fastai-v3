@@ -65,14 +65,14 @@ async def analyze(request):
     image = cv2.imdecode(np.fromstring(img_bytes, np.uint8), 1)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     next_image = cv2.adaptiveThreshold(gray_image,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY,11,4)
-    img = np.asarray(PIL.Image.open(io.BytesIO(next_image)))
     prediction = learn.predict(img)[0]
     return JSONResponse({'result': str(prediction)})
 
 
 
 
-    # MOG PROBEREN 
+    #     img = np.asarray(PIL.Image.open(io.BytesIO(next_image)))
+
    
 
 
