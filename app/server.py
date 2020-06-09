@@ -78,7 +78,6 @@ async def analyze(request):
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = open_image(BytesIO(img_bytes))
-    img.seek(0)
     IMG = Image.open(img)
     image = cv2.imread(IMG)
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
