@@ -131,6 +131,16 @@ function takePhoto() {
   });
 }
   
+  var number;
+  function myFunction() {
+      number = 'kip';
+      document.getElementById("myText").innerHTML = number;
+    }
+  
+  function kip() {
+    var number2 = number + 'tandoori';
+  }
+   
 
 });
 
