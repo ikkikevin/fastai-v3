@@ -147,7 +147,7 @@ function showPicked(input) {
 }
 
 function analyze() {
-  var uploadFiles = el("file-input").files;
+  var uploadFiles = el('img.src');
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
