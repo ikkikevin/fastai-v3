@@ -32,7 +32,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install opencv-python 
 
-RUN pip install flask
 
 
 COPY app app/
