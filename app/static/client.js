@@ -120,20 +120,16 @@ function setZoom() {
 
 // Get a Blob from the currently selected camera source and
 // display this with an img element.
+  var foto;
 function takePhoto() {
   imageCapture.takePhoto().then(function(blob) {
     console.log('Took photo:', blob);
     img.classList.remove('hidden');
-    var foto = URL.createObjectURL(blob);
+    foto = URL.createObjectURL(blob);
   }).catch(function(error) {
     console.log('takePhoto() error: ', error);
   });
 }
-  
-  
- function myFunction() {
-      document.getElementById("myText").innerHTML = foto;
-    } 
   
 
 });
@@ -155,15 +151,6 @@ function showPicked(input) {
 }
 
 function analyze() {
-    function takePhoto() {
-    imageCapture.takePhoto().then(function(blob) {
-      console.log('Took photo:', blob);
-      img.classList.remove('hidden');
-      var foto = URL.createObjectURL(blob);
-    }).catch(function(error) {
-      console.log('takePhoto() error: ', error);
-    });
-  }
   var uploadFiles = el('foto');
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
