@@ -10,7 +10,6 @@ from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 import cv2
 import numpy as np
-from flask import Flask, render_template
 
 
 export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
@@ -57,10 +56,6 @@ async def homepage(request):
     return HTMLResponse(html_file.open().read())
 
 
-@app.route('/bye')
-def bye():
-    headline = "Goodbye!"
-    return render_template("index.html", headline=headline)
 
 
 @app.route('/analyze', methods=['POST'])
