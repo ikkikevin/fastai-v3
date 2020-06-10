@@ -1,3 +1,6 @@
+document.addeventlistener('DOMContentLoaded', function() {
+
+
 // window.isSecureContext could be used for Chrome
 var isSecureOrigin = location.protocol === 'https:' ||
 location.host === 'localhost';
@@ -125,7 +128,7 @@ function takePhoto() {
   });
 }
 
-
+});
 
 var el = x => document.getElementById(x);
 
