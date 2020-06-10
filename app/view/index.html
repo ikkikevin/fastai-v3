@@ -56,14 +56,14 @@ video {
   }
 }
 </style>
-<body>
+<body onload="myFunction()">
 <div>
   <div class='center'>
     <div class='title'>De Facial Action Unit Classifier</div>
     <p>
       Maak een foto van jezelf en kom erachter welke Facial Action Units jij momenteel in jouw gezichtsuitdrukking vertoont!
     </p>
-    <h1>{{ headline }}</h1>
+    <h1>"The value for var is: " <span id="myText"></span></h1>
     <div class='content'>
       <div class='no-display'>
         <input id='file-input'
