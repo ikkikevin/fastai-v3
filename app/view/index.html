@@ -126,9 +126,14 @@ function setZoom() {
   });
 }
 
+  
+   
+
+});
+
+      var foto;
 // Get a Blob from the currently selected camera source and
 // display this with an img element.
-  var foto;
 function takePhoto() {
   imageCapture.takePhoto().then(function(blob) {
     console.log('Took photo:', blob);
@@ -139,13 +144,11 @@ function takePhoto() {
   });
 }
   
-  function myFunction() {
+
+ function myFunction() {
       document.getElementById("demo").innerHTML = foto;
-  }
-   
-
-});
-
+  }   
+    
 var el = x => document.getElementById(x);
 
 function showPicker() {
