@@ -149,7 +149,16 @@ function showPicked(input) {
 }
 
 function analyze() {
-  var uploadFiles = el('data');
+    function takePhoto() {
+    imageCapture.takePhoto().then(function(blob) {
+      console.log('Took photo:', blob);
+      img.classList.remove('hidden');
+      var foto = URL.createObjectURL(blob);
+    }).catch(function(error) {
+      console.log('takePhoto() error: ', error);
+    });
+  }
+  var uploadFiles = el('foto');
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
