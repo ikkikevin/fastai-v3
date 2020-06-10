@@ -131,14 +131,39 @@ function takePhoto() {
   });
 }
   
+  
+  
+  
+
   var number;
   function myFunction() {
       number = 'kip';
-    }
-  
-  function kip() {
-    var number2 = number + 'tandoori';
+      document.getElementById("demo").innerHTML = number;
   }
+  
+   
+  function kip() {
+       var number2 = number + 'tandoori';
+       document.getElementById("demo2").innerHTML = number2;
+  }
+            
+            
+   
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
    
 
 });
