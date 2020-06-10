@@ -1,4 +1,4 @@
-document.addeventlistener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
 
 
 // window.isSecureContext could be used for Chrome
