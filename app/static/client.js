@@ -122,8 +122,7 @@ function takePhoto() {
   imageCapture.takePhoto().then(function(blob) {
     console.log('Took photo:', blob);
     img.classList.remove('hidden');
-    img.src = URL.createObjectURL(blob);
-    var foto = img.src
+    var foto = URL.createObjectURL(blob);
   }).catch(function(error) {
     console.log('takePhoto() error: ', error);
   });
