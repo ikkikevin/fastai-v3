@@ -129,6 +129,12 @@ function takePhoto() {
     console.log('takePhoto() error: ', error);
   });
 }
+  
+  
+ function myFunction() {
+      document.getElementById("myText").innerHTML = foto;
+    } 
+  
 
 });
 
