@@ -123,6 +123,7 @@ function takePhoto() {
     console.log('Took photo:', blob);
     img.classList.remove('hidden');
     img.src = URL.createObjectURL(blob);
+    var foto = img.src
   }).catch(function(error) {
     console.log('takePhoto() error: ', error);
   });
@@ -147,7 +148,7 @@ function showPicked(input) {
 }
 
 function analyze() {
-  var uploadFiles = el('img.src');
+  var uploadFiles = el('foto');
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
