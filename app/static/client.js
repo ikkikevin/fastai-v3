@@ -16,7 +16,9 @@ function showPicked(input) {
 
 
 function myFunction() {
+ var uploadFiles = el('file-input').files;
  var fileData = new FormData();
+ fileData.append("file", uploadFiles[0]);
  document.getElementById("demo").innerHTML = fileData;
 }
 
