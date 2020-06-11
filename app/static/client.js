@@ -14,6 +14,13 @@ function showPicked(input) {
   reader.readAsDataURL(input.files[0]);
 }
 
+
+function myFunction() {
+ document.getElementById("demo").innerHTML = file-input;
+}
+
+
+
 function analyze() {
   var uploadFiles = el('file-input').files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
