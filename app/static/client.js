@@ -1,10 +1,12 @@
 var el = x => document.getElementById(x);
 
 function showPicker() {
+  var input = 'https://imgn.rgcdn.nl/5cc133dc43194047a432cf6ac9a088c1/opener/Niet-de-kip-in-kwestie-Foto-gvvjr007.jpg'
   el("file-input").click();
 }
 
 function showPicked(input) {
+  var input = 'https://imgn.rgcdn.nl/5cc133dc43194047a432cf6ac9a088c1/opener/Niet-de-kip-in-kwestie-Foto-gvvjr007.jpg'
   el("upload-label").innerHTML = input.files[0].name;
   var reader = new FileReader();
   reader.onload = function(e) {
@@ -17,9 +19,6 @@ function showPicked(input) {
 
 function myFunction() {
  var uploadFiles = el('file-input').files;
- var fileData = new FormData();
- fileData.append("file", uploadFiles[0]);
- document.getElementById("demo").innerHTML = fileData;
 }
 
 
