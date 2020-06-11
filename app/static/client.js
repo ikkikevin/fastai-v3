@@ -1,7 +1,7 @@
 var el = x => document.getElementById(x);
 
 function showPicker() {
-  el("fileinput").click();
+  el("file-input").click();
 }
 
 function showPicked(input) {
@@ -16,13 +16,14 @@ function showPicked(input) {
 
 
 function myFunction() {
- document.getElementById("demo").innerHTML = fileinput;
+ var uploadFiles = el('file-input').files;
+ document.getElementById("demo").innerHTML = uploadFiles;
 }
 
 
 
 function analyze() {
-  var uploadFiles = el('fileinput').files;
+  var uploadFiles = el('file-input').files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
