@@ -124,6 +124,8 @@ function grabFrame() {
 	document.getElementById("result-label").innerHTML = "";
 	$('a#grabFrame').hide();
 	$('a#grabFrameDisabled').show();
+	$('select#videoSource').hide();
+	$('a#videoSourceDisabled').show();
     dataURL = canvas.toDataURL(imageBitmap);
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
@@ -146,6 +148,8 @@ function iconhide() {
 	$('div#camera').show();
 	$('a#grabFrameDisabled').hide();
 	$('a#grabFrame').show();
+	$('a#videoSourceDisabled').hide();
+	$('select#videoSource').show();
   }	
 }
    
@@ -216,6 +220,8 @@ function analyze() {
     $('i#iconanalyze').show();
 	$('a#grabFrameDisabled').hide();
 	$('a#grabFrame').show();
+	$('a#videoSourceDisabled').hide();
+	$('select#videoSource').show();
   };
 
   var fileData = new FormData();
