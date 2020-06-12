@@ -11,11 +11,18 @@ from starlette.staticfiles import StaticFiles
 import cv2
 import numpy as np
 
+# AUs model
+#export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1DbBviso0uSUcXuCCDG-QC5lCF9_hmkZf?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
+# Pain or No pain model
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1kCF22x7SLD01cNeCRGHqWBzoomI4nDiN?alt=media&key=AIzaSyCc_2mS-vDiQqmGQI-vIHo3RzqslAP3Do0'
 export_file_name = 'export.pkl'
 
-classes = ['1', '10', '11', '12', '14', '15', '16', '17', '18', '2', '20', '21', '22', '23', '24', '25', '26', '27', '30', '31', '38', '39', '4', '43', '45', '5', '54','6', '61', '62', '63', '64', '7', '9']
+# Classes AUs model
+#classes = ['1', '10', '11', '12', '14', '15', '16', '17', '18', '2', '20', '21', '22', '23', '24', '25', '26', '27', '30', '31', '38', '39', '4', '43', '45', '5', '54','6', '61', '62', '63', '64', '7', '9']
+
+# Classes Pain or No pain model
+classes = ['no pain', 'pain']
 path = Path(__file__).parent
 
 app = Starlette()
