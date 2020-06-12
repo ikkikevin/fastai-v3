@@ -96,7 +96,7 @@ video {
 	
 <center>
 	<div class="fotoresultaat hidden" id="fotoresultaat">
-		<i onclick='iconhide()' style="color: #d54141;" class="material-icons nav__icon">cancel</i>
+		<i onclick='iconhide()' class="material-icons nav__icon">cancel</i>
 		<canvas class="hidden" style="width:100%;"></canvas>
 	</div>
 </center>
@@ -111,14 +111,13 @@ video {
 <nav class="nav_bottom">	
   <select style="font-size: 33px;" id="videoSource" class="nav__link__bottom__color__a nav_fix">
   <a class="nav__link__bottom">
-    
-	
 	 <i style="font-size: 60px;" class="material-icons nav__icon">error_outline</i>
-
 	 <option value="">Camera Source</option>
-
   </a>
   </select>
+  <a id="videoSourceDisabled" style="font-size: 33px; display:none;" class="nav__link__bottom__color__a_disabled nav__link__bottom">
+	Camera selected
+  </a>
   <a href="#" id="grabFrame" class="nav__link__bottom nav__link__bottom__color__b">
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Take Photo</span>
