@@ -63,28 +63,8 @@ video {
 <div>
   <div class='center'>
     <div class='title'>De Facial Action Unit Classifier</div>
-    <p>
-      Maak een foto van jezelf en kom erachter welke Facial Action Units jij momenteel in jouw gezichtsuitdrukking vertoont!
-    </p>
-    
-    
-    <button onclick="myFunction()">Click me 1</button>
-    <p id="demo"></p>
-    
     
     <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
-      </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Upload een afbeelding</button>
-      <div class='upload-label'>
-        <label id='upload-label'>Geen afbeelding gekozen</label>
-      </div>
       <div>
         <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
       </div>
@@ -94,14 +74,8 @@ video {
       <div class='result-label'>
         <label id='result-label'></label>
       </div>
-      <p>&copy; 2020	K. Doan, H. Hazelzet, T. Slingerland, S. Zoet</p>
-      
     </div>
-  </div>
-</div>
-  <div id="container">
-
-
+    
     <div>
       <button id="grabFrame">Grab Frame</button>
       <div class="select">
@@ -112,9 +86,10 @@ video {
 
     <video autoplay playsinline class="hidden"></video>
     <canvas class="hidden"></canvas>
-
-
+    
+    <p>&copy; 2020	K. Doan, H. Hazelzet, T. Slingerland, S. Zoet</p>
   </div>
-  <script src='../static/client.js'></script>
+</div>
+<script src='../static/client.js'></script>
 </body>
 </html>
