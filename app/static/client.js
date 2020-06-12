@@ -144,6 +144,8 @@ function iconhide() {
   } else {
     x.style.display = "none";
 	$('div#camera').show();
+	$('a#grabFrameDisabled').hide();
+	$('a#grabFrame').show();
   }	
 }
    
