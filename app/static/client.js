@@ -121,8 +121,8 @@ function grabFrame() {
     canvas.classList.remove('hidden');
 	$('div#camera').hide();
 	$('div#fotoresultaat').show();
+	document.getElementById("result-label").innerHTML = "";
     dataURL = canvas.toDataURL(imageBitmap);
-	  
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
@@ -206,6 +206,7 @@ function analyze() {
       el("result-label").innerHTML = `Result = ${response["result"]}`;
 	  $('div#fotoresultaat').hide();
 	  $('div#camera').show();
+	  dataURL = '0';
     }
     el("analyze-button").innerHTML = "Analyze";
   };
