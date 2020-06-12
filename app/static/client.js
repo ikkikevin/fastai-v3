@@ -203,7 +203,7 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]}`;
+      el("result-label").innerHTML = `You have ${response["result"]}!`;
 	  $('div#fotoresultaat').hide();
 	  $('div#camera').show();
 	  dataURL = '0';
