@@ -192,7 +192,7 @@ function analyze() {
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
-  el("analyze-button").innerHTML = "Analyzing...";
+  el("analyzetext").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -208,7 +208,9 @@ function analyze() {
 	  $('div#camera').show();
 	  dataURL = '0';
     }
-    el("analyze-button").innerHTML = "Analyze";
+    el("analyzetext").innerHTML = "Analyze Face";
+    $('i#iconanalyze').show();
+
   };
 
   var fileData = new FormData();
