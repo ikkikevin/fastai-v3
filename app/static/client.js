@@ -99,7 +99,7 @@ function setZoom() {
     
 	
 var imageCapture;
-var grabFrameButton = document.querySelector('button#grabFrame');
+var grabFrameButton = document.querySelector('#grabFrame');
 //var takePhotoButton = document.querySelector('button#takePhoto');
 
 grabFrameButton.onclick = grabFrame;
@@ -119,6 +119,8 @@ function grabFrame() {
     canvas.height = imageBitmap.height;
     canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
     canvas.classList.remove('hidden');
+	$('div#camera').hide();
+	$('div#fotoresultaat').show();
     dataURL = canvas.toDataURL(imageBitmap);
 	  
   }).catch(function(error) {
@@ -127,9 +129,23 @@ function grabFrame() {
 }
 
 
+
  
 });
    
+   
+   
+function iconhide() {
+	var x = document.getElementById("fotoresultaat");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+	$('div#camera').show();
+  }	
+}
+   
+
 
 var el = x => document.getElementById(x);
 
@@ -188,6 +204,8 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `Result = ${response["result"]}`;
+	  $('div#fotoresultaat').hide();
+	  $('div#camera').show();
     }
     el("analyze-button").innerHTML = "Analyze";
   };
