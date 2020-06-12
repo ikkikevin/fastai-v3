@@ -110,13 +110,11 @@ body {
     color: #262626;
 }
 
-.content {
-    position: relative;
+.result-label {
+    position: absolute;
 	padding-top: 50px;
     font-size: 50px;
 	width: 100%;
-	height: 100px;
-	background: red;
     font-family: sans-serif;
 }
 
@@ -140,15 +138,6 @@ body {
   z-index: 1;
 }
 
-
-
-
-
-
-
 button:focus {
     outline: 0;
 }
-
-
-
