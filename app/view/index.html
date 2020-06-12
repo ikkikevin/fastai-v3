@@ -1,7 +1,7 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
-  <link rel='stylesheet' href='../static/style.css'>
+  <link rel='stylesheet' href='../pijndetectie/static/style.css'>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -69,14 +69,14 @@ video {
 <div>
 <nav class="nav_top">
   <a href="#" class="nav__link__top">
-	<img src="../images/logo-utwente.png" style="height: 70px;"/>
+	<img src="../pijndetectie/images/logo-utwente.png" style="height: 70px;"/>
   </a>
   <a href="#" class="nav__link__top">
 	<h2 style="font-size: 30px;">Pain Detection App</h2>
 	<p style="margin-top: -10px; margin-left: -4px;">K. Doan, H. Hazelzet, T. Slingerland, S. Zoet<span style="margin-left: 8px; font-size: 8px;">&copy 2020</span></p>
   </a>
   <a href="#" class="nav__link__top">
-	<img src="../images/amsterdam-umc-logo.jpg" style="height: 100px;"/>
+	<img src="../pijndetectie/images/amsterdam-umc-logo.jpg" style="height: 100px;"/>
   </a>
 </nav>
 
@@ -97,11 +97,10 @@ video {
 	
 	
     
-    <div class='content'>
-     
-      
-      <div style="background: red;" class='result-label'>
+    <div class='content'>      
+      <div class='result-label'>
         <label id='result-label'></label>
+		<a>TEST: pain.</a>
       </div>
     </div>
     
@@ -113,21 +112,24 @@ video {
 <nav class="nav_bottom">
   <select style="font-size: 33px;" id="videoSource" class="nav__link__bottom__color__a nav_fix">
   <a class="nav__link__bottom">
-    <i class="material-icons nav__icon">camera_alt</i>
-	  <option value="">Camera Source</option>
+    
+	
+	<i class="material-icons nav__icon">camera_alt</i>
+	 
+	 <option value="">Camera Source</option>
 
   </a>
   </select>
   <a href="#" id="grabFrame" class="nav__link__bottom nav__link__bottom__color__b">
-    <i class="material-icons nav__icon">center_focus_weak</i>
+    <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Grab Frame</span>
   </a>
   <a href="#" id='analyze-button' class="nav__link__bottom nav__link__bottom__color__c analyze-button" onclick='analyze()'>
-    <i class="material-icons nav__icon">assessment</i>
-    <span class="nav__text">Analyze Face</span>
+    <i id="iconanalyze" style="font-size: 60px;" class="material-icons nav__icon">assessment</i>
+    <span id="analyzetext" class="nav__text">Analyze Face</span>
   </a>
 </nav>
 </div>
-<script src='../static/client.js'></script>
+<script src='../pijndetectie/static/client.js'></script>
 </body>
 </html>
