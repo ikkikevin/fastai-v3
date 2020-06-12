@@ -108,18 +108,22 @@ video {
       </div>
     
   </div>
-<nav class="nav_bottom">
+<nav class="nav_bottom">	
   <select style="font-size: 33px;" id="videoSource" class="nav__link__bottom__color__a nav_fix">
   <a class="nav__link__bottom">
     
 	
-	<i class="material-icons nav__icon">camera_alt</i>
-	 
+	 <i style="font-size: 60px;" class="material-icons nav__icon">error_outline</i>
+
 	 <option value="">Camera Source</option>
 
   </a>
   </select>
   <a href="#" id="grabFrame" class="nav__link__bottom nav__link__bottom__color__b">
+    <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
+    <span class="nav__text">Take Photo</span>
+  </a>
+  <a id="grabFrameDisabled" style="display: none;" class="nav__link__bottom nav__link__bottom__color__disabled">
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Take Photo</span>
   </a>
