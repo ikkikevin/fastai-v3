@@ -54,6 +54,10 @@ body {
 	background-color: #241f25;
 	color: #fff;
 }
+.nav__link__bottom__color__a_disabled {
+	background-color: #353235;
+	color: #fff;
+}
 
 .nav__link__bottom__color__b {
 	background-color: #d54141;
@@ -96,6 +100,12 @@ body {
 	padding-left: 4%;
 }
 
+
+.icon_fix {
+	color: #d54141; 
+	background: #000;
+	border-radius: 100%;
+}
 
 .no-display {
     display: none;
