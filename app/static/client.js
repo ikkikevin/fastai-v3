@@ -120,6 +120,7 @@ function grabFrame() {
     canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
     canvas.classList.remove('hidden');
     dataURL = canvas.toDataURL(imageBitmap);
+	  
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
@@ -130,37 +131,7 @@ function grabFrame() {
 });
    
 
-  function myFunction() {
-      document.getElementById("demo").innerHTML = dataURL;
-  }
-
-
-
-
-
-
-
-
-
 var el = x => document.getElementById(x);
-
-function showPicker() {
-  el("file-input").click();
-}
-
-function showPicked(input) {
-  el("upload-label").innerHTML = input.files[0].name;
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    el("image-picked").src = dataURL;
-    el("image-picked").className = e.target.result;
-  };
-  reader.readAsDataURL(input.files[0]);
-}
-
-
-
-
 
 function b64toBlob(b64Data, contentType, sliceSize) {
         contentType = contentType || '';
@@ -200,14 +171,6 @@ function analyze() {
   var realData = block[1].split(",")[1];// In this case "R0lGODlhPQBEAPeoAJosM...."
   // Convert it to a blob to upload
   var blob = b64toBlob(realData, contentType);
-
-	
-	
-	
-	
-	
-	
-	
 	
   // var uploadFiles = el('file-input').files;
 //  var uploadFiles = dataURL;
