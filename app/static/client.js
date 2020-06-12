@@ -119,6 +119,7 @@ function grabFrame() {
     canvas.height = imageBitmap.height;
     canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
     canvas.classList.remove('hidden');
+    dataURL = canvas.toDataURL(imageBitmap);
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
@@ -178,7 +179,7 @@ function showPicked(input) {
 
 function analyze() {
   // var uploadFiles = el('file-input').files;
-  var uploadFiles = foto;
+  var uploadFiles = dataURL;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
