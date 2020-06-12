@@ -98,12 +98,12 @@ function setZoom() {
 
     
 	
-	var imageCapture;
+var imageCapture;
 var grabFrameButton = document.querySelector('button#grabFrame');
-var takePhotoButton = document.querySelector('button#takePhoto');
+//var takePhotoButton = document.querySelector('button#takePhoto');
 
 grabFrameButton.onclick = grabFrame;
-takePhotoButton.onclick = takePhoto;
+//takePhotoButton.onclick = takePhoto;
 
 var canvas = document.querySelector('canvas');
 var img = document.querySelector('img');
@@ -126,18 +126,6 @@ function grabFrame() {
 }
 
 
-// Get a Blob from the currently selected camera source and
-// display this with an img element.
-function takePhoto() {
-  imageCapture.takePhoto().then(function(blob) {
-    console.log('Took photo:', blob);
-    img.classList.remove('hidden');
-    img.src = URL.createObjectURL(blob);
-	  foto = img.src;
-  }).catch(function(error) {
-    console.log('takePhoto() error: ', error);
-  });
-}
  
 });
    
