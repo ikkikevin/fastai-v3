@@ -1,8 +1,25 @@
 <html lang='en'>
 <head>
   <meta charset='utf-8'>
-  <link rel='stylesheet' href='../static/style.css'>
+  <link rel='stylesheet' href='../pijndetectie/static/style.css'>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>De Facial Action Unit Classifier</title>
+  
+  	<link rel="apple-touch-icon" sizes="57x57" href="images/icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 </head>
   <script>
 </script>
@@ -42,60 +59,75 @@ input#zoom {
 }
 
 video {
-  margin: 0 12px 20px 0;
+  margin: 0 0px 0px 0;
   vertical-align: top;
+  width: 100%;
 }
 
-@media (max-width: 500px) {
-  button {
-    font-size: 0.8em;
-    width: calc(33% - 5px);
-  }
-}
-
-@media (max-width: 720px) {
-  video {
-    margin: 0 10px 10px 0;
-  }
-}
 </style>
 <body>
 <div>
+<nav class="nav_top">
+  <a href="#" class="nav__link__top">
+	<img src="../pijndetectie/images/logo-utwente.png" style="height: 70px;"/>
+  </a>
+  <a href="#" class="nav__link__top">
+	<h2 style="font-size: 30px;">Pain Detection App</h2>
+	<p style="margin-top: -10px; margin-left: -4px;">K. Doan, H. Hazelzet, T. Slingerland, S. Zoet<span style="margin-left: 8px; font-size: 8px;">&copy 2020</span></p>
+  </a>
+  <a href="#" class="nav__link__top">
+	<img src="../pijndetectie/images/amsterdam-umc-logo.jpg" style="height: 100px;"/>
+  </a>
+</nav>
+
   <div class='center'>
-    <div class='title'>De Facial Action Unit Classifier</div>
+      <input class="hidden" id="zoom" type="range" step="20">
+    
+<div id="camera">
+    <video autoplay playsinline class="hidden"></video>
+</div>
+	
+	
+<center>
+	<div class="fotoresultaat hidden" id="fotoresultaat">
+		<i onclick='iconhide()' class="material-icons nav__icon">cancel</i>
+		<canvas class="hidden" style="width:100%;"></canvas>
+	</div>
+</center>
+	
+	
     
     <div class='content'>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Scan jouw gezicht!</button>
-      </div>
-      <div class='result-label'>
+     
+      
+      <div style="background: red;" class='result-label'>
         <label id='result-label'></label>
       </div>
     </div>
     
     <div>
       <br/>
-      <div class="select">
-        <label for="videoSource">Video source: </label><br/>
-        <select id="videoSource"></select><br/>
-      </div>
-      <br/>
-      <button id="grabFrame">Grab Frame</button>
-      <br/>
-      <br/>
-      <input class="hidden" id="zoom" type="range" step="20">
+      
     </div>
-
-    <video autoplay playsinline class="hidden"></video>
-    <center>
-    <canvas class="hidden" style="width:50%;"></canvas>
-    </center>
-    <p>&copy; 2020	K. Doan, H. Hazelzet, T. Slingerland, S. Zoet</p>
   </div>
+<nav class="nav_bottom">
+  <select style="font-size: 33px;" id="videoSource" class="nav__link__bottom__color__a nav_fix">
+  <a class="nav__link__bottom">
+    <i class="material-icons nav__icon">camera_alt</i>
+	  <option value="">Camera Source</option>
+
+  </a>
+  </select>
+  <a href="#" id="grabFrame" class="nav__link__bottom nav__link__bottom__color__b">
+    <i class="material-icons nav__icon">center_focus_weak</i>
+    <span class="nav__text">Grab Frame</span>
+  </a>
+  <a href="#" id='analyze-button' class="nav__link__bottom nav__link__bottom__color__c analyze-button" onclick='analyze()'>
+    <i class="material-icons nav__icon">assessment</i>
+    <span class="nav__text">Analyze Face</span>
+  </a>
+</nav>
 </div>
-<script src='../static/client.js'></script>
+<script src='../pijndetectie/static/client.js'></script>
 </body>
 </html>
