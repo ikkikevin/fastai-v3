@@ -174,6 +174,29 @@ function showPicked(input) {
 
 
 
+function b64toBlob(b64Data, contentType, sliceSize) {
+        contentType = contentType || '';
+        sliceSize = sliceSize || 512;
+
+        var byteCharacters = atob(b64Data);
+        var byteArrays = [];
+
+        for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+            var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+            var byteNumbers = new Array(slice.length);
+            for (var i = 0; i < slice.length; i++) {
+                byteNumbers[i] = slice.charCodeAt(i);
+            }
+
+            var byteArray = new Uint8Array(byteNumbers);
+
+            byteArrays.push(byteArray);
+        }
+
+      var blob = new Blob(byteArrays, {type: contentType});
+      return blob;
+}
 
 
 
@@ -182,9 +205,25 @@ function showPicked(input) {
 
 
 function analyze() {
+  var block = dataURL.split(";");		
+  // Get the content type of the image
+  var contentType = block[0].split(":")[1];// In this case "image/gif"
+  // get the real base64 content of the file
+  var realData = block[1].split(",")[1];// In this case "R0lGODlhPQBEAPeoAJosM...."
+  // Convert it to a blob to upload
+  var blob = b64toBlob(realData, contentType);
+
+	
+	
+	
+	
+	
+	
+	
+	
   // var uploadFiles = el('file-input').files;
-  var uploadFiles = dataURL;
-  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
+//  var uploadFiles = dataURL;
+//  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
   el("analyze-button").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
@@ -203,6 +242,6 @@ function analyze() {
   };
 
   var fileData = new FormData();
-  fileData.append("file", uploadFiles[0]);
+  fileData.append("file", blob);
   xhr.send(fileData);
 }
