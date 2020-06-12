@@ -122,6 +122,8 @@ function grabFrame() {
 	$('div#camera').hide();
 	$('div#fotoresultaat').show();
 	document.getElementById("result-label").innerHTML = "";
+	$('a#grabFrame').hide();
+	$('a#grabFrameDisabled').show();
     dataURL = canvas.toDataURL(imageBitmap);
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
@@ -210,7 +212,8 @@ function analyze() {
     }
     el("analyzetext").innerHTML = "Analyze Face";
     $('i#iconanalyze').show();
-
+	$('a#grabFrameDisabled').hide();
+	$('a#grabFrame').show();
   };
 
   var fileData = new FormData();
