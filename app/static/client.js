@@ -166,7 +166,7 @@ function showPicked(input) {
   var reader = new FileReader();
   reader.onload = function(e) {
     el("image-picked").src = dataURL;
-    el("image-picked").className = e;
+    el("image-picked").className = e.target.result;
   };
   reader.readAsDataURL(input.files[0]);
 }
