@@ -61,6 +61,10 @@ body {
 	color: #fff;
 }
 
+.nav__link__bottom__color__disabled {
+		background-color: #d86363;
+}
+
 .nav__link__bottom__color__c {
     background-color: #eb905b;
 	margin-top: -16px;
@@ -71,7 +75,7 @@ body {
     background-color: #373538;
 }
 
-.nav__link__bottom__color__b:hover {
+.nav__link__bottom__color__b:hover, .nav__link__bottom__color__disabled {
     background-color: #d86363;
 }
 
@@ -117,8 +121,6 @@ body {
 	width: 100%;
     font-family: sans-serif;
 }
-
-
 
 
 #fotoresultaat {
