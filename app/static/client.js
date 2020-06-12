@@ -141,10 +141,9 @@ function takePhoto() {
  
 });
    
-   var foto;
 
   function myFunction() {
-      document.getElementById("demo").innerHTML = foto;
+      document.getElementById("demo").innerHTML = dataURL;
   }
 
 
@@ -170,6 +169,11 @@ function showPicked(input) {
   };
   reader.readAsDataURL(input.files[0]);
 }
+
+
+
+
+
 
 
 
