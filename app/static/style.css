@@ -44,7 +44,6 @@ body {
 .nav__link__top {
 	font-size: 13px;
 	cursor: context-menu;
-
 }
 
 .nav__link__bottom {
@@ -150,16 +149,15 @@ body {
     font-family: sans-serif;
 	display: flex;
     flex-direction: column;
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 3%;
+	padding-right: 3%;
 	align-items: center;
     justify-content: center;
-		background: #fff;
-
+	background: #fff;
 }
 
 .resultstyle {
-	font-size: 22px;
+	font-size: 25px;
 	font-weight: bold;
 }
 
