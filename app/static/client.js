@@ -209,6 +209,12 @@ function b64toBlob(b64Data, contentType, sliceSize) {
       return blob;
 }
 
+
+
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+
 function setTime() {
   ++totalSeconds;
   secondsLabel.innerHTML = pad(totalSeconds % 60);
@@ -246,9 +252,6 @@ function analyze() {
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.<br/><label id='minutes'>00</label>:<label id='seconds'>00</label>";
   el("analyzetext").innerHTML = "Analyzing...";
   
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
 setInterval(setTime, 1000);
 
 
