@@ -43,6 +43,8 @@ body {
 
 .nav__link__top {
 	font-size: 13px;
+	cursor: context-menu;
+
 }
 
 .nav__link__bottom {
