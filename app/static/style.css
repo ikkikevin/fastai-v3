@@ -172,6 +172,15 @@ body {
 	font-weight: bold;
 }
 
+
+#iconcancel {
+	margin-top: 100px;
+	color: red;
+	background: black;
+	border-radius: 100%;
+
+}
+
 #fotoresultaat {
   position: relative;
 }  
