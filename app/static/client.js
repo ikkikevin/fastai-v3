@@ -232,9 +232,6 @@ function analyze() {
   $('a#analyze-button').hide();
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   el("analyzetext").innerHTML = "Analyzing...";
-  var audio = new Audio(sound2);
-	audio.loop = false;
-	audio.play();
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
