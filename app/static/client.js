@@ -214,6 +214,8 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 var minutesLabel = document.getElementById("minutes");
 var secondsLabel = document.getElementById("seconds");
 var totalSeconds = 0;
+setInterval(setTime, 1000);
+
 
 function setTime() {
   ++totalSeconds;
@@ -252,7 +254,6 @@ function analyze() {
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.<br/><label id='minutes'>00</label>:<label id='seconds'>00</label>";
   el("analyzetext").innerHTML = "Analyzing...";
   
-setInterval(setTime, 1000);
 
 
 	
