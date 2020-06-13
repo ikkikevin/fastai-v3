@@ -131,7 +131,9 @@ function grabFrame() {
 	$('a#analyze-buttonDisabled').hide();
 	$('a#analyze-button').show();
     dataURL = canvas.toDataURL(imageBitmap);
-	document.getElementById("sound1").play();
+var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play();
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
