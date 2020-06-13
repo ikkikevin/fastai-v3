@@ -150,6 +150,7 @@ function iconhide() {
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
+	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean.";
   }	
 }
    
