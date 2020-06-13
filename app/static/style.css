@@ -124,14 +124,40 @@ body {
     color: #262626;
 }
 
-.result-label {
-    position: absolute;
-	padding-top: 50px;
-    font-size: 50px;
-	width: 100%;
-    font-family: sans-serif;
+
+
+
+
+
+
+
+.nav_bottom_2 {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 170px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow-x: auto;
+	margin-bottom: 200px;
 }
 
+
+.result-label {
+	width: 100%;
+    font-family: sans-serif;
+	display: flex;
+    flex-direction: column;
+	padding-left: 10%;
+	padding-right: 10%;
+	align-items: center;
+    justify-content: center;
+}
+
+.resultstyle {
+	font-size: 22px;
+	font-weight: bold;
+}
 
 #fotoresultaat {
   position: relative;
