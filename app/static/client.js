@@ -121,7 +121,7 @@ function grabFrame() {
     canvas.classList.remove('hidden');
 	$('div#camera').hide();
 	$('div#fotoresultaat').show();
-	document.getElementById("result-label").innerHTML = "";
+	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean, and keep your face as straight as possible. Press 'Analyze Face' to continue, or take a new photo.";
 	$('a#grabFrame').hide();
 	$('a#grabFrameDisabled').show();
 	$('select#videoSource').hide();
@@ -140,7 +140,7 @@ function grabFrame() {
    
    
 function iconhide() {
-	var x = document.getElementById("fotoresultaat");
+  var x = document.getElementById("fotoresultaat");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
@@ -150,7 +150,7 @@ function iconhide() {
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
-	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean, and keep your face as straight as possible.";
+	document.getElementById("result-label").innerHTML = "You can do this, we believe in you!";
   }	
 }
    
