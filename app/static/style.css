@@ -23,6 +23,7 @@ body {
     background-color: #ffffff;
     display: flex;
     overflow-x: auto;
+	z-index: 999;
 }
 
 .nav__link__top, .nav__link__bottom  {
@@ -43,7 +44,7 @@ body {
 
 .nav__link__top {
 	font-size: 13px;
-	cursor: context-menu;
+	cursor: auto;
 }
 
 .nav__link__bottom {
@@ -66,8 +67,9 @@ body {
 	color: #fff;
 }
 
-.nav__link__bottom__color__disabled {
+.nav__link__bottom__color__b_disabled {
 		background-color: #d86363;
+		color: #fff;
 }
 
 .nav__link__bottom__color__c {
@@ -76,16 +78,24 @@ body {
     color: #fff;
 }
 
+.nav__link__bottom__color__c_disabled {
+		background-color: #f5c7a3;
+		color: white;
+		cursor: context-menu;
+}
+
 .nav__link__bottom__color__a:hover {
     background-color: #373538;
 }
 
 .nav__link__bottom__color__b:hover, .nav__link__bottom__color__disabled {
     background-color: #d86363;
+	
 }
 
 .nav__link__bottom__color__c:hover {
     background-color: #f6af79;
+
 }
 
 .nav__link--active {
@@ -141,6 +151,7 @@ body {
     display: flex;
     overflow-x: auto;
 	margin-bottom: 200px;
+	z-index: 555;
 }
 
 
