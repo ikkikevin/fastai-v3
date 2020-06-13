@@ -131,7 +131,7 @@ function grabFrame() {
 	$('a#analyze-buttonDisabled').hide();
 	$('a#analyze-button').show();
     dataURL = canvas.toDataURL(imageBitmap);
-var audio = new Audio(sound1);
+	var audio = new Audio(sound1);
 	audio.loop = false;
 	audio.play();
   }).catch(function(error) {
@@ -228,6 +228,8 @@ function analyze() {
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
   $('i#iconcancel').hide();
+  $('a#analyze-buttonDisabled').show();
+  $('a#analyze-button').hide();
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   el("analyzetext").innerHTML = "Analyzing...";
   var audio = new Audio(sound2);
@@ -258,8 +260,6 @@ function analyze() {
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
 	$('i#iconcancel').show();
-	$('a#analyze-buttonDisabled').show();
-	$('a#analyze-button').hide();
   };
 
   var fileData = new FormData();
