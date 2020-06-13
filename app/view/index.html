@@ -73,16 +73,16 @@ video {
 </style>
 <body>
 <div>
-<nav class="nav_top">
+<nav  class="nav_top">
   <a href="#" class="nav__link__top">
-	<img src="../images/logo-utwente.png" style="height: 70px;"/>
+	<img src="../images/logo-utwente.png" alt="University of Twente" title="University of Twente" style="height: 70px;"/>
   </a>
   <a href="#" class="nav__link__top">
 	<h2 style="font-size: 30px;">Pain Detection App</h2>
 	<p style="margin-top: -10px; margin-left: -4px;">K. Doan, H. Hazelzet, T. Slingerland, S. Zoet<span style="margin-left: 8px; font-size: 8px;">&copy 2020</span></p>
   </a>
   <a href="#" class="nav__link__top">
-	<img src="../images/amsterdam-umc-logo.jpg" style="height: 100px;"/>
+	<img src="../images/amsterdam-umc-logo.jpg" alt="Amsterdam UMC" title="Amstedam UMC" style="height: 100px;"/>
   </a>
 </nav>
 
@@ -97,7 +97,7 @@ video {
 	
 <center>
 	<div class="fotoresultaat hidden" id="fotoresultaat">
-		<i onclick='iconhide()' id="iconcancel" class="material-icons nav__icon">cancel</i>
+		<i onclick='iconhide()' id="iconcancel" style="cursor: pointer;" class="material-icons nav__icon">cancel</i>
 		<canvas class="hidden" style="width:100%;"></canvas>
 	</div>
 </center>
@@ -112,7 +112,7 @@ video {
   </div>
 <nav class="nav_bottom">	
 
-  <select style="font-size: 33px;" id="videoSource" class="nav__link__bottom__color__a nav_fix">
+  <select style="font-size: 33px;" id="videoSource" onclick='playsound()' class="nav__link__bottom__color__a nav_fix">
   <a class="nav__link__bottom">
 	 <i style="font-size: 60px;" class="material-icons nav__icon">error_outline</i>
 	 <option value="">Camera Source</option>
@@ -125,11 +125,15 @@ video {
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Take Photo</span>
   </a>
-  <a id="grabFrameDisabled" style="display: none;" class="nav__link__bottom nav__link__bottom__color__disabled">
+  <a id="grabFrameDisabled" style="display: none;" class="nav__link__bottom nav__link__bottom__color__b_disabled">
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Photo Taken</span>
   </a>
-  <a href="#" id='analyze-button' class="nav__link__bottom nav__link__bottom__color__c analyze-button" onclick='analyze()'>
+  <a href="#" id='analyze-button' style="display: none;" class="nav__link__bottom nav__link__bottom__color__c analyze-button" onclick='analyze()'>
+    <i id="iconanalyze" style="font-size: 60px;" class="material-icons nav__icon">assessment</i>
+    <span id="analyzetext" class="nav__text">Analyze Face</span>
+  </a>
+  <a href="#" id='analyze-buttonDisabled' class="nav__link__bottom nav__link__bottom__color__c_disabled analyze-button">
     <i id="iconanalyze" style="font-size: 60px;" class="material-icons nav__icon">assessment</i>
     <span id="analyzetext" class="nav__text">Analyze Face</span>
   </a>
