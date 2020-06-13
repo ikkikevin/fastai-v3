@@ -89,6 +89,7 @@ function getCapabilities() {
 
 
 
+
 function setZoom() {
   imageCapture.setOptions({
     zoom: zoomInput.value
@@ -108,6 +109,7 @@ grabFrameButton.onclick = grabFrame;
 var canvas = document.querySelector('canvas');
 var img = document.querySelector('img');
 
+
 	
 	
 // Get an ImageBitmap from the currently selected camera source and
@@ -126,7 +128,12 @@ function grabFrame() {
 	$('a#grabFrameDisabled').show();
 	$('select#videoSource').hide();
 	$('a#videoSourceDisabled').show();
+	$('a#analyze-buttonDisabled').hide();
+	$('a#analyze-button').show();
     dataURL = canvas.toDataURL(imageBitmap);
+	var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play();
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
@@ -137,9 +144,14 @@ function grabFrame() {
  
 });
    
-   
+var sound1 = 'button-50.mp3';
+var sound2 = 'water-splash.wav';
+var sound3 = '';
    
 function iconhide() {
+	var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play();
   var x = document.getElementById("fotoresultaat");
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -150,10 +162,20 @@ function iconhide() {
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
+	$('a#analyze-buttonDisabled').show();
+	$('a#analyze-button').hide();
 	document.getElementById("result-label").innerHTML = "You can do this, we believe in you!";
   }	
 }
    
+   
+  
+   
+function playsound() {
+    var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play(); 
+}
 
 
 var el = x => document.getElementById(x);
@@ -200,7 +222,10 @@ function analyze() {
   // var uploadFiles = el('file-input').files;
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
-
+	document.getElementById("result-label").innerHTML = "Please wait.";
+  var audio = new Audio(sound2);
+	audio.loop = false;
+	audio.play();
   $('i#iconcancel').hide();
   el("analyzetext").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
@@ -225,6 +250,11 @@ function analyze() {
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
 	$('i#iconcancel').show();
+	$('a#analyze-buttonDisabled').show();
+	$('a#analyze-button').hide();
+	var audio = new Audio(sound2);
+	audio.loop = false;
+	audio.play();
   };
 
   var fileData = new FormData();
