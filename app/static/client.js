@@ -144,8 +144,8 @@ function grabFrame() {
  
 });
    
-var sound1 = 'button-50.mp3';
-var sound2 = 'water-splash.wav';
+var sound1 = '../static/button-50.mp3';
+var sound2 = '../static/water-splash.wav';
 var sound3 = '';
    
 function iconhide() {
