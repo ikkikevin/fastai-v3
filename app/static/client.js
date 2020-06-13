@@ -164,7 +164,7 @@ function iconhide() {
 	$('select#videoSource').show();
 	$('a#analyze-buttonDisabled').show();
 	$('a#analyze-button').hide();
-	document.getElementById("result-label").innerHTML = "You can do this, we believe in you!";
+	document.getElementById("result-label").innerHTML = "Please take a new photo. You can do this, we believe in you!";
   }	
 }
    
