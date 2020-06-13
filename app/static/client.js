@@ -200,6 +200,7 @@ function analyze() {
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
+  $('i#iconcancel').hide();
   el("analyzetext").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
