@@ -131,9 +131,7 @@ function grabFrame() {
 	$('a#analyze-buttonDisabled').hide();
 	$('a#analyze-button').show();
     dataURL = canvas.toDataURL(imageBitmap);
-	var audio = new Audio(sound1);
-	audio.loop = false;
-	audio.play();
+	document.getElementById("sound1").play();
   }).catch(function(error) {
     console.log('grabFrame() error: ', error);
   });
@@ -227,9 +225,12 @@ function analyze() {
   // var uploadFiles = el('file-input').files;
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
-  document.getElementById("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   $('i#iconcancel').hide();
+  el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   el("analyzetext").innerHTML = "Analyzing...";
+  var audio = new Audio(sound2);
+	audio.loop = false;
+	audio.play();
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -244,6 +245,9 @@ function analyze() {
 	  $('div#fotoresultaat').hide();
 	  $('div#camera').show();
 	  dataURL = '0';
+	  var audio = new Audio(sound2);
+	  audio.loop = false;
+	  audio.play();
     }
     el("analyzetext").innerHTML = "Analyze Face";
     $('i#iconanalyze').show();
@@ -254,9 +258,6 @@ function analyze() {
 	$('i#iconcancel').show();
 	$('a#analyze-buttonDisabled').show();
 	$('a#analyze-button').hide();
-	var audio = new Audio(sound2);
-	audio.loop = false;
-	audio.play();
   };
 
   var fileData = new FormData();
