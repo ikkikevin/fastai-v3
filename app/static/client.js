@@ -144,8 +144,8 @@ function grabFrame() {
  
 });
    
-var sound1 = '../static/button-50.mp3';
-var sound2 = '../static/water-splash.wav';
+var sound1 = '../pijndetectie/static/button-50.mp3';
+var sound2 = '../pijndetectie/static/water-splash.wav';
 var sound3 = '';
    
 function iconhide() {
@@ -173,6 +173,11 @@ function iconhide() {
    
 function playsound() {
     var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play(); 
+}  
+function playsound2() {
+    var audio = new Audio(sound2);
 	audio.loop = false;
 	audio.play(); 
 }
@@ -222,10 +227,7 @@ function analyze() {
   // var uploadFiles = el('file-input').files;
 //  var uploadFiles = dataURL;
 //  if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
-	document.getElementById("result-label").innerHTML = "Please wait.";
-  var audio = new Audio(sound2);
-	audio.loop = false;
-	audio.play();
+  document.getElementById("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   $('i#iconcancel').hide();
   el("analyzetext").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
