@@ -150,7 +150,7 @@ function iconhide() {
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
-	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean.";
+	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean, and keep your face as straight as possible.";
   }	
 }
    
