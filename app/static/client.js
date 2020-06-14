@@ -121,6 +121,7 @@ function grabFrame() {
     canvas.height = imageBitmap.height;
     canvas.getContext('2d').drawImage(imageBitmap, 0, 0);
     canvas.classList.remove('hidden');
+	$('i#iconcancel').show();
 	$('div#camera').hide();
 	$('div#fotoresultaat').show();
 	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean, and keep your face as straight as possible. Press 'Analyze Face' to continue, or take a new photo.";
