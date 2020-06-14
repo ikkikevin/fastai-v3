@@ -179,6 +179,7 @@ function iconhide2() {
   } else {
     x.style.display = "none";
 	$('div#camera').show();
+	$('div#fotoresultaat').hide();
 	$('a#grabFrameDisabled').hide();
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
