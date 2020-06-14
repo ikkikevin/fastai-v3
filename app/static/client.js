@@ -187,6 +187,7 @@ function iconhide2() {
 	$('select#videoSource').show();
 	$('a#analyze-buttonDisabled').show();
 	$('a#analyze-button').hide();
+	document.getElementById("analyzetext").innerHTML = "Analyze Face";
 	document.getElementById("result-label").innerHTML = "Take a photo of your face, then analyze to find out if you are in pain or not!";
   }	
 }
