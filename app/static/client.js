@@ -286,7 +286,7 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `You have ${response["result"]}!`;
-	  //$('div#fotoresultaat').hide();
+	  $('div#fotoresultaat2').show();
 	  $('i#iconcancel2').show();
 	  dataURL = '0';
 	  $('div#timer').hide();
