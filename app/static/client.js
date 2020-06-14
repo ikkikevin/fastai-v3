@@ -253,7 +253,7 @@ function analyze() {
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   el("analyzetext").innerHTML = "Analyzing...";
   $('div#timer').show();
-  setInterval(setTime, 1000);
+  kip = setInterval(setTime, 1000);
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -268,6 +268,7 @@ function analyze() {
 	  $('div#fotoresultaat').hide();
 	  $('div#camera').show();
 	  dataURL = '0';
+	  clearInterval(kip);
 	  var audio = new Audio(sound2);
 	  audio.loop = false;
 	  audio.play();
