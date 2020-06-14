@@ -253,7 +253,7 @@ function analyze() {
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
   el("analyzetext").innerHTML = "Analyzing...";
   $('div#timer').show();
-  kip = setInterval(setTime, 1000);
+  var kip = setInterval(setTime, 1000);
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
