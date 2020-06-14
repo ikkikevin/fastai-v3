@@ -282,6 +282,7 @@ function analyze() {
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
 	$('i#iconcancel').show();
+	
   };
 
   var fileData = new FormData();
