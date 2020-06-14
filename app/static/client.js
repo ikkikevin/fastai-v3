@@ -173,7 +173,7 @@ function iconhide2() {
 	var audio = new Audio(sound1);
 	audio.loop = false;
 	audio.play();
-  var x = document.getElementById("fotoresultaat");
+  var x = document.getElementById("fotoresultaat2");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {
