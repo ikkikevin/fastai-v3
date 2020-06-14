@@ -268,6 +268,7 @@ function analyze() {
 	  $('div#fotoresultaat').hide();
 	  $('div#camera').show();
 	  dataURL = '0';
+	  $('div#timer').hide();
 	  clearInterval(kip);
 	  var audio = new Audio(sound2);
 	  audio.loop = false;
