@@ -167,7 +167,28 @@ function iconhide() {
 	document.getElementById("result-label").innerHTML = "Please take a new photo. You can do this, we believe in you!";
   }	
 }
-   
+
+
+function iconhide2() {
+	var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play();
+  var x = document.getElementById("fotoresultaat");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+	$('div#camera').show();
+	$('a#grabFrameDisabled').hide();
+	$('a#grabFrame').show();
+	$('a#videoSourceDisabled').hide();
+	$('select#videoSource').show();
+	$('a#analyze-buttonDisabled').show();
+	$('a#analyze-button').hide();
+	document.getElementById("result-label").innerHTML = "Take a photo of your face, then analyze to find out if you are in pain or not!";
+  }	
+}
+
    
   
    
@@ -266,7 +287,7 @@ function analyze() {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `You have ${response["result"]}!`;
 	  //$('div#fotoresultaat').hide();
-	  $('i#iconcancel').show();
+	  $('i#iconcancel2').show();
 	  dataURL = '0';
 	  $('div#timer').hide();
 	  clearInterval(kip);
