@@ -282,6 +282,7 @@ function analyze() {
 	$('select#videoSource').show();
 	$('i#iconcancel').show();
     	totalSeconds = 0;
+	el("div#timer").innerHTML = "<label id='minutes'>00</label>:<label id='seconds'>00</label>";
   };
 
   var fileData = new FormData();
