@@ -274,7 +274,6 @@ function analyze() {
 	  audio.loop = false;
 	  audio.play();
     }
-    el("div#timer").innerHTML = "<label id='minutes'>00</label>:<label id='seconds'>00</label>";
     el("analyzetext").innerHTML = "Analyze Face";
     $('i#iconanalyze').show();
 	$('a#grabFrameDisabled').hide();
@@ -282,7 +281,7 @@ function analyze() {
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
 	$('i#iconcancel').show();
-	
+    el("div#timer").innerHTML = "<label id='minutes'>00</label>:<label id='seconds'>00</label>";
   };
 
   var fileData = new FormData();
