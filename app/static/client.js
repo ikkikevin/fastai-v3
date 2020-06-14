@@ -265,7 +265,8 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `You have ${response["result"]}!`;
-	  $('div#fotoresultaat').hide();
+	  //$('div#fotoresultaat').hide();
+	  $('i#iconcancel').show();
 	  $('div#camera').show();
 	  dataURL = '0';
 	  $('div#timer').hide();
@@ -280,7 +281,6 @@ function analyze() {
 	$('a#grabFrame').show();
 	$('a#videoSourceDisabled').hide();
 	$('select#videoSource').show();
-	$('i#iconcancel').show();
     	totalSeconds = 0;
 	el("minutes").innerHTML = "00";
 	el("seconds").innerHTML = "00";
