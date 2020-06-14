@@ -173,15 +173,15 @@ body {
 }
 
 
-#iconcancel {
+#iconcancel, #iconcancel2 {
 	margin-top: 100px;
 	color: red;
 	background: black;
 	border-radius: 100%;
-
+	z-index: 99;
 }
 
-#fotoresultaat {
+#fotoresultaat, #fotoresultaat2 {
   position: relative;
 }  
 #fotoresultaat i {
@@ -193,6 +193,17 @@ body {
   margin-top: 10px;
   font-size:100px;
 }
+#fotoresultaat2 i {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  height: 100px;
+  right: 15px;
+  margin-top: 10px;
+  font-size:100px;
+}
+
+
 #fotoresultaat canvas {
   position: absolute;
   z-index: 1;
