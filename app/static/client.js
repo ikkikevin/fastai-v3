@@ -114,6 +114,7 @@ function showPicked(input) {
 	document.getElementById("result-label").innerHTML = "Tip: make sure your background is clean, and keep your face as straight as possible. Press 'Analyze Face' to continue, or take a new photo.";
 	$('a#grabFrame').hide();
 	$('a#grabFrameDisabled').show();
+	$('div#fotoresultaat').show();
 	$('a#analyze-buttonDisabled').hide();
 	$('a#analyze-button').show();
   };
@@ -166,4 +167,3 @@ function analyze() {
   fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
 }
-
