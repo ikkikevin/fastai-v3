@@ -23,7 +23,7 @@ body {
     background-color: #ffffff;
     display: flex;
     overflow-x: auto;
-	z-index:500;
+	z-index: 999;
 }
 
 .nav__link__top, .nav__link__bottom  {
@@ -151,7 +151,7 @@ body {
     display: flex;
     overflow-x: auto;
 	margin-bottom: 200px;
-	z-index: 860;
+	z-index: 555;
 }
 
 
@@ -178,13 +178,22 @@ body {
 	color: red;
 	background: black;
 	border-radius: 100%;
-	z-index: 999 !important;
+	z-index: 99;
 }
 
 #fotoresultaat, #fotoresultaat2 {
   position: relative;
 }  
-#fotoresultaat i{
+#fotoresultaat i {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  height: 100px;
+  right: 15px;
+  margin-top: 10px;
+  font-size:100px;
+}
+#fotoresultaat2 i {
   position: absolute;
   margin: 0 auto;
   z-index: 2;
@@ -194,34 +203,12 @@ body {
   font-size:100px;
 }
 
-#fotoresultaat2 i {
-  position: absolute;
-  margin: 0 auto;
-  z-index: 900;
-  height: 100px;
-  right: 15px;
-  margin-top: 10px;
-  font-size:100px;
-}
 
-
-#fotoresultaat img {
+#fotoresultaat canvas {
   position: absolute;
   z-index: 1;
-  width:100%;
 }
-
 
 button:focus {
     outline: 0;
-}
-
-.bgpos {
-	position: absolute;
-	margin-top: 100px;	
-	left: 20%;
-	right:20%;
-}
-#bg {
-	width: 100%;
 }
