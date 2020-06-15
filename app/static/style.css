@@ -173,18 +173,18 @@ body {
 }
 
 
-#iconcancel, #iconcancel2 {
+#iconcancel {
 	margin-top: 100px;
 	color: red;
 	background: black;
 	border-radius: 100%;
-	z-index: 99;
+
 }
 
-#fotoresultaat, #fotoresultaat2 {
+#fotoresultaat {
   position: relative;
 }  
-#fotoresultaat i {
+#fotoresultaat i{
   position: absolute;
   margin: 0 auto;
   z-index: 2;
@@ -193,18 +193,7 @@ body {
   margin-top: 10px;
   font-size:100px;
 }
-#fotoresultaat2 i {
-  position: absolute;
-  margin: 0 auto;
-  z-index: 2;
-  height: 100px;
-  right: 15px;
-  margin-top: 10px;
-  font-size:100px;
-}
-
-
-#fotoresultaat canvas {
+#fotoresultaat img {
   position: absolute;
   z-index: 1;
 }
@@ -212,3 +201,5 @@ body {
 button:focus {
     outline: 0;
 }
+
+
