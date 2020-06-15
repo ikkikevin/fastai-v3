@@ -70,6 +70,8 @@ video {
   width: 100%;
 }
 
+
+
 </style>
 <body>
 <div>
@@ -87,29 +89,34 @@ video {
 </nav>
 
   <div class='center'>
-      <input class="hidden" id="zoom" type="range" step="20">
     
-<div id="camera">
-    <video autoplay playsinline muted loop class="hidden"></video>
-	<a style="position: absolute;z-index:-1; color: red; left: 25%; right: 25%;top: 30%;">This app is only compatible on the latest version of Google Chrome, Firefox or Microsoft Edge on <u>Windows</u> and <u>Android</u>.</a>
-</div>
-	
-	
+
+		
+	<div class='no-display'>
+        <input id='file-input'
+               class='no-display'
+               type='file'
+               name='file'
+               accept='image/*'
+               onchange='showPicked(this)'>
+      </div>
+      <!-- <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button> -->
+     
+     
+
+	  
 <center>
 	<div class="fotoresultaat hidden" id="fotoresultaat">
 		<i onclick='iconhide()' id="iconcancel" style="cursor: pointer;" class="material-icons nav__icon">cancel</i>
-		<canvas class="hidden" style="width:100%;"></canvas>
-	</div>
-	<div class="fotoresultaat2 hidden" id="fotoresultaat2">
-		<i onclick='iconhide2()' id="iconcancel2" style="cursor: pointer;" class="material-icons nav__icon">cancel</i>
+		<img id='image-picked' style="width:100%;" class='no-display' alt='Chosen Image'>
 	</div>
 </center>
+	
 
 	<div class="nav_bottom_2">
 		<div class="result-label">
 			<label class="resultstyle" id='result-label'>Take a photo of your face, then analyze to find out if you are in pain or not!</label>
-			
-	<div id="timer" class="hidden" style="font-size: 20px;">
+			<div id="timer" class="hidden" style="font-size: 20px;">
 			<label id="minutes">00</label>:<label id="seconds">00</label>
 			</div>
 		</div>
@@ -118,16 +125,7 @@ video {
   </div>
 <nav class="nav_bottom">	
 
-  <select style="font-size: 33px;" id="videoSource" onclick='playsound()' class="nav__link__bottom__color__a nav_fix">
-  <a class="nav__link__bottom">
-	 <i style="font-size: 60px;" class="material-icons nav__icon">error_outline</i>
-	 <option value="">Switch Camera</option>
-  </a>
-  </select>
-  <a id="videoSourceDisabled" style="font-size: 33px; display:none;" class="nav__link__bottom__color__a_disabled nav__link__bottom">
-	Camera selected
-  </a>
-  <a href="#" id="grabFrame" class="nav__link__bottom nav__link__bottom__color__b">
+  <a id="grabFrame" onclick='showPicker()' href="#" id="" class="nav__link__bottom nav__link__bottom__color__b">
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
     <span class="nav__text">Take Photo</span>
   </a>
