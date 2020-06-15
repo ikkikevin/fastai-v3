@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
  
 });
    
-var sound1 = '../pijndetectie/static/button-50.mp3';
-var sound2 = '../pijndetectie/static/water-splash.wav';
+var sound1 = '../static/button-50.mp3';
+var sound2 = '../static/water-splash.wav';
 var sound3 = '';
    
 
