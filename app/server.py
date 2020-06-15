@@ -30,6 +30,8 @@ app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Reques
 app.mount('/static', StaticFiles(directory='app/static'))
 app.mount('/images', StaticFiles(directory='app/images'))
 app.mount('/images/icon', StaticFiles(directory='app/images/icon'))
+app.mount('/view', StaticFiles(directory='app/view'))
+
 
 
 async def download_file(url, dest):
