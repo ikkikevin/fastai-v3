@@ -23,6 +23,7 @@ body {
     background-color: #ffffff;
     display: flex;
     overflow-x: auto;
+	z-index:500;
 }
 
 .nav__link__top, .nav__link__bottom  {
@@ -207,6 +208,7 @@ body {
 #fotoresultaat img {
   position: absolute;
   z-index: 1;
+  width:100%;
 }
 
 
