@@ -150,8 +150,8 @@ body {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     display: flex;
     overflow-x: auto;
-    margin-bottom: 200px;
-    z-index: 860;
+	margin-bottom: 200px;
+	z-index: 860;
 }
 
 
@@ -216,4 +216,12 @@ button:focus {
     outline: 0;
 }
 
-
+.bgpos {
+	position: absolute;
+	margin-top: 100px;	
+	left: 20%;
+	right:20%;
+}
+#bg {
+	width: 100%;
+}
