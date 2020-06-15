@@ -30,6 +30,30 @@ function iconhide() {
 }
 
    
+
+function iconhide2() {
+	var audio = new Audio(sound1);
+	audio.loop = false;
+	audio.play();
+  var x = document.getElementById("fotoresultaat2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+	$('div#camera').show();
+	$('div#fotoresultaat').hide();
+	$('a#grabFrameDisabled').hide();
+	$('a#grabFrame').show();
+	$('a#videoSourceDisabled').hide();
+	$('select#videoSource').show();
+	$('a#analyze-buttonDisabled').show();
+	$('a#analyze-button').hide();
+	document.getElementById("analyzetext").innerHTML = "Analyze Face";
+	document.getElementById("result-label").innerHTML = "Take a photo of your face, then analyze to find out if you are in pain or not!";
+  }	
+}
+   
+   
 function playsound() {
     var audio = new Audio(sound1);
 	audio.loop = false;
@@ -104,14 +128,11 @@ function analyze() {
 
   $('i#iconcancel').hide();
   $('a#analyze-buttonDisabled').show();
-  
-  
-  $('div#timer').show();
-  var kip = setInterval(setTime, 1000);
-  
   $('a#analyze-button').hide();
   el("result-label").innerHTML = "Please wait. This could take up to 30 seconds.";
-  el("analyzetext").innerHTML = "Analyzing..."  
+  el("analyzetext").innerHTML = "Analyzing...";
+  $('div#timer').show();
+  var kip = setInterval(setTime, 1000);
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -123,8 +144,10 @@ function analyze() {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `You have ${response["result"]}!`;
-	  $('div#fotoresultaat').hide();
-	  $('div#camera').show();
+	  //$('div#fotoresultaat').hide();
+	  $('div#fotoresultaat2').show();
+	  $('i#iconcancel').hide();
+	  $('i#iconcancel2').show();
 	  dataURL = '0';
 	  $('div#timer').hide();
 	  clearInterval(kip);
@@ -132,12 +155,9 @@ function analyze() {
 	  audio.loop = false;
 	  audio.play();
     }
-    el("analyzetext").innerHTML = "Analyze Face";
+    el("analyzetext").innerHTML = "Face Analyzed";
     $('i#iconanalyze').show();
-	$('a#grabFrameDisabled').hide();
-	$('a#grabFrame').show();
-	$('i#iconcancel').show();
-	totalSeconds = 0;
+    	totalSeconds = 0;
 	el("minutes").innerHTML = "00";
 	el("seconds").innerHTML = "00";
   };
