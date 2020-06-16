@@ -167,6 +167,29 @@ body {
 	background: #fff;
 }
 
+
+.nav_bottom_3 {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    overflow-x: auto;
+	margin-bottom: 340px;
+	z-index: 1060;
+}
+
+
+.result-label-3 {
+	width: 100%;
+    font-family: sans-serif;
+	display: flex;
+    flex-direction: column;
+	padding-left: 80%;
+	padding-right: 0%;
+	opacity: 1;	
+}
+
 .resultstyle {
 	font-size: 25px;
 	font-weight: bold;
