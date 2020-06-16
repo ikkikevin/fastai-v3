@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
  
 });
    
-var sound1 = '../pijndetectie/static/button-50.mp3';
-var sound2 = '../pijndetectie/static/water-splash.wav';
+var sound1 = '../static/button-50.mp3';
+var sound2 = '../static/water-splash.wav';
 var sound3 = '';
    
 
@@ -97,6 +97,15 @@ function pad(val) {
 }
 
 
+function swap() {
+  var x = document.getElementById("banner69");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 
 
 function showPicker() {
@@ -167,4 +176,3 @@ function analyze() {
   fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
 }
-
