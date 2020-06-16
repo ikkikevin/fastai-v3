@@ -95,16 +95,25 @@ img {
 <center>
 	<div class="fotoresultaat hidden" id="fotoresultaat">
 		<i onclick='iconhide()' id="iconcancel" style="cursor: pointer;" class="material-icons nav__icon">cancel</i>
-		<img id='image-picked' class='no-display' alt='Chosen Image'>
+		<img style="overflow-y: scroll;" id='image-picked' class='no-display' alt='Chosen Image'>
 	</div>
 	<div class="fotoresultaat2 hidden" id="fotoresultaat2">
 		<i onclick='iconhide2()' id="iconcancel2" style="cursor: pointer;" class="material-icons nav__icon">cancel</i>
 	</div>
 </center>
 	
+	
+	
+	<div class="nav_bottom_3">
+			<div class="result-label-3">
 
-	<div class="nav_bottom_2">
-		<div class="result-label">
+				<i id="swap" onclick='swap()' style="font-size: 70px; cursor: pointer;" class="material-icons nav__icon">swap_vert</i>
+
+	</div>
+	</div>
+<div id="banner69">
+	<div id="swap2" class="nav_bottom_2">
+		<div id="swap-2-1" class="result-label">
 			<label class="resultstyle" id='result-label'>Take a photo of your face, then analyze to find out if you are in pain or not!</label>
 			<div id="timer" class="hidden" style="font-size: 20px;">
 			<label id="minutes">00</label>:<label id="seconds">00</label>
@@ -112,8 +121,7 @@ img {
 		</div>
     </div>   
       
-  </div>
-<nav class="nav_bottom">	
+<nav id="swap1" class="nav_bottom">	
 
   <a id="grabFrame" onclick='showPicker()' href="#" id="" class="nav__link__bottom nav__link__bottom__color__b">
     <i style="font-size: 60px;" class="material-icons nav__icon">center_focus_weak</i>
@@ -133,6 +141,8 @@ img {
   </a>
 </nav>
 </div>
+</div>
+  </div>
 
 <script src='../static/client-ios.js'></script>
 </body>
